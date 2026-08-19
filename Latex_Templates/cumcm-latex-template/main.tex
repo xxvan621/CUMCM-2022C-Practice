@@ -1,0 +1,206 @@
+%! TEX program = xelatex
+\documentclass[UTF8,a4paper,12pt,fontset=fandol]{ctexart}
+
+% ============================================================
+% 2026 年全国大学生数学建模竞赛论文模板（电子版）
+% 编译器：XeLaTeX
+% 官方硬性要求：A4；四周页边距至少 2.5 cm；第一页为摘要；
+% 不要目录；正文不超过 30 页；正文和附录不得出现身份信息。
+% ============================================================
+
+\usepackage[top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{booktabs,tabularx,multirow,longtable,array}
+\usepackage{graphicx,float,subcaption}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage{appendix}
+
+\graphicspath{{figures/}}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+\linespread{1.25}
+\pagestyle{plain}
+
+\ctexset{
+  section={format=\zihao{4}\bfseries,beforeskip=1.2ex,afterskip=0.8ex},
+  subsection={format=\zihao{-4}\bfseries,beforeskip=1ex,afterskip=0.6ex},
+  subsubsection={format=\zihao{-4}\bfseries,beforeskip=0.8ex,afterskip=0.4ex}
+}
+
+\captionsetup{font=small,labelsep=quad}
+\setlist{nosep,leftmargin=2em}
+
+\lstset{
+  basicstyle=\small\ttfamily,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  frame=single,
+  breaklines=true,
+  showstringspaces=false,
+  keywordstyle=\color{blue!70!black},
+  commentstyle=\color{green!45!black},
+  stringstyle=\color{purple}
+}
+
+\begin{document}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+% ======================== 摘要专用页 ========================
+\begin{center}
+  {\zihao{3}\bfseries 论文题目}
+\end{center}
+
+\begin{center}
+  {\zihao{4}\bfseries 摘\quad 要}
+\end{center}
+
+这里填写摘要。建议按照“研究对象—四个问题的方法—主要结果—模型检验—结论”组织。
+摘要要给出关键数值结果，不要只写背景和建模过程。题目、摘要和关键词原则上不得超过一页。
+
+\vspace{0.8em}
+\noindent\textbf{关键词：}关键词一；关键词二；关键词三；关键词四
+
+% 2026 年官方规范明确要求：正文前不要目录。
+\newpage
+
+% =========================== 正文 ===========================
+\section{问题重述}
+\subsection{问题背景}
+用自己的语言概括现实背景，不要大段照抄赛题。
+
+\subsection{问题要求}
+分别概括各问的目标、已知条件、约束和所需输出。
+
+\section{问题分析}
+\subsection{问题一分析}
+说明研究对象、关键变量、建模思路和预期结果。
+
+\subsection{问题二分析}
+说明该问与前一问的联系，以及分组、预测或优化思路。
+
+\subsection{问题三分析}
+说明需要增加的因素、约束条件和验证方法。
+
+\subsection{问题四分析}
+说明标签定义、判定规则和评价指标。
+
+\section{模型假设}
+\begin{enumerate}
+  \item 假设一，并说明其合理性；
+  \item 假设二，并说明忽略该因素可能带来的影响；
+  \item 假设三。
+\end{enumerate}
+
+\section{符号说明}
+\begin{table}[H]
+  \centering
+  \caption{主要符号说明}
+  \begin{tabularx}{\textwidth}{cXc}
+    \toprule
+    符号 & 含义 & 单位 \\
+    \midrule
+    $x$ & 示例变量，请替换 & -- \\
+    $y$ & 示例响应变量，请替换 & -- \\
+    \bottomrule
+  \end{tabularx}
+  \label{tab:symbols}
+\end{table}
+
+\section{数据预处理}
+说明数据来源、缺失值、异常值、重复记录、变量单位和衍生变量。所有处理应能由附录中的程序复现。
+
+\section{问题一的模型建立与求解}
+\subsection{变量与模型}
+写出变量定义、模型公式、参数含义和选择该模型的理由。
+
+\subsection{模型求解}
+说明算法步骤和参数设置，不要只粘贴程序。
+
+\subsection{结果与检验}
+同时给出数值结果、图表、误差或显著性检验，并解释现实含义。
+
+\section{问题二的模型建立与求解}
+\subsection{模型建立}
+正文内容。
+
+\subsection{求解结果与敏感性分析}
+正文内容。
+
+\section{问题三的模型建立与求解}
+\subsection{模型建立}
+正文内容。
+
+\subsection{模型验证}
+说明训练集与验证集的划分、评价指标，以及如何避免数据泄漏。
+
+\subsection{求解结果}
+正文内容。
+
+\section{问题四的模型建立与求解}
+\subsection{判定模型}
+正文内容。
+
+\subsection{评价指标与结果}
+给出混淆矩阵、灵敏度、特异度、ROC 或其他与题意相符的指标。
+
+\section{模型评价与推广}
+\subsection{模型优点}
+\begin{itemize}
+  \item 优点一；
+  \item 优点二。
+\end{itemize}
+
+\subsection{模型局限}
+\begin{itemize}
+  \item 局限一；
+  \item 局限二。
+\end{itemize}
+
+\subsection{模型推广}
+说明模型可以应用到哪些相似问题，以及需要增加哪些数据。
+
+% ========================= 参考文献 =========================
+% 正文中用 \cite{ref1} 引用。以下只是格式示例，提交前替换成真实文献。
+\begin{thebibliography}{99}
+  \bibitem{ref1} 作者. 文献题名[J]. 期刊名, 年, 卷(期): 起止页码.
+  % 使用 AI 时，还应按官方规定列出工具名称、版本/型号、机构和使用日期。
+\end{thebibliography}
+
+% ======================= AI 使用声明 ========================
+% 必须按真实情况填写，下面两种情况只保留一种。
+\section*{AI工具使用声明}
+本参赛队使用了AI工具辅助完成部分工作。正式提交前，应在正文相应位置标注AI生成内容，
+并在参考文献中列出工具名称、版本或型号、开发机构和使用日期；同时在支撑材料中提交单独的
+“AI工具使用详情.pdf”，说明使用环节、关键交互记录、采纳内容和人工修改情况。
+% 若完全未使用AI，则把上段改为：本参赛队未使用任何AI工具。
+
+% =========================== 附录 ===========================
+\newpage
+\begin{appendices}
+
+\section{支撑材料文件列表}
+\begin{table}[H]
+  \centering
+  \caption{支撑材料文件列表}
+  \begin{tabularx}{\textwidth}{lX}
+    \toprule
+    文件名 & 文件说明 \\
+    \midrule
+    code/problem1.py & 问题一完整可运行程序，请按实际文件修改 \\
+    results/result.xlsx & 主要计算结果，请按实际文件修改 \\
+    AI工具使用详情.pdf & 使用AI工具时必须提交，请按实际情况填写 \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\section{源程序}
+% 将文件名替换为实际程序；确保程序完整、可运行且与论文结果一致。
+% \lstinputlisting[language=Python]{code/problem1.py}
+
+\end{appendices}
+\end{document}
